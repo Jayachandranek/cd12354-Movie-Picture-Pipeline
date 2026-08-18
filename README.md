@@ -465,6 +465,80 @@ kustomize edit set image backend=<ECR_REPO_URL>:<NEW_TAG_HERE>
 # Apply the manifests to the cluster
 kustomize build | kubectl apply -f -
 ```
+---
+
+## Project Submission
+
+### Project Repository
+
+The complete project, including the application code, Kubernetes configuration, Terraform setup, and GitHub Actions workflows, is available in the repository below.
+
+[Movie Picture Pipeline - GitHub Repository](https://github.com/Jayachandranek/cd12354-Movie-Picture-Pipeline)
+
+### Deployed Applications
+
+The applications have been deployed to an Amazon EKS cluster and were tested after deployment.
+
+**Frontend:** 
+
+[Open the Movie Picture application](http://a59ba799b59704cd8935e0a9e07c07b7-1406337174.us-east-1.elb.amazonaws.com)
+
+The frontend successfully loads the movie list and allows the movie details to be viewed.
+
+**Backend API:** 
+
+[Open the Movies API](http://a108b18d5e8a54721b3bcb99b54e2447-845285323.us-east-1.elb.amazonaws.com/movies)
+
+The backend API returns the available movies as JSON.
+
+### CI/CD Workflows
+
+Four GitHub Actions workflows were implemented for the project:
+
+- Backend Continuous Integration
+- Backend Continuous Deployment
+- Frontend Continuous Integration
+- Frontend Continuous Deployment
+
+The workflows perform the required linting, testing, Docker image building, ECR image publishing, and Kubernetes deployment steps.
+
+### Deployment Verification
+
+After deployment, both applications were verified on the EKS cluster.
+
+- Backend pod was running successfully.
+- Frontend pod was running successfully.
+- The backend `/movies` endpoint returned the movie data.
+- The frontend successfully displayed the movie list and movie details.
+- The latest CI/CD workflow runs completed successfully.
+
+### Screenshots
+
+The screenshots below provide additional evidence of the working deployment.
+
+#### Frontend Application
+
+![Frontend Application](screenshots/frontend-application.png)
+
+#### Backend API
+
+![Backend API](screenshots/backend-api.png)
+
+#### Frontend Continuous Integration
+
+![Frontend Continuous Integration](screenshots/frontend-ci.png)
+
+#### Backend Continuous Integration
+
+![Backend Continuous Integration](screenshots/backend-ci.png)
+
+#### Frontend Continuous Deployment
+
+![Frontend Continuous Deployment](screenshots/frontend-cd.png)
+
+#### Backend Continuous Deployment
+
+![Backend Continuous Deployment](screenshots/backend-cd.png)
 
 ## License
 
